@@ -86,10 +86,10 @@ class SMTPServer(smtpd.SMTPServer):
 
     def run(self):
         asyncore.loop()
-        if hasattr(signal, 'SIGTERM'):
-            def sig_handler(signal,frame):
-                self.logger.info("Got signal %s, shutting down." % signal)
-                sys.exit(0)
-            signal.signal(signal.SIGTERM, sig_handler)
-        while 1:
-            time.sleep(1)
+        # if hasattr(signal, 'SIGTERM'):
+        #     def sig_handler(signal,frame):
+        #         self.logger.info("Got signal %s, shutting down." % signal)
+        #         sys.exit(0)
+        #     signal.signal(signal.SIGTERM, sig_handler)
+        # while 1:
+        #     time.sleep(1)
